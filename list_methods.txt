@@ -1,0 +1,265 @@
+#print(dir(list))#['append','clear','copy','count','extend','index','insert','pop','remove','reverse','sort']
+
+
+#------------------------------------------
+# # 1.append
+
+# My_list=[1,2,3,4,5,6,7,8]
+# My_list.append(9)#[1,2,3,4,5,6,7,8,9]
+
+# # custom method for append()
+# class Mylist:
+#     def __init__(self,List):
+#         self.List=List
+        
+#     def Custom_append(self,*ListItems):
+#         for i in ListItems:
+#             self.List=self.List+[i]
+#         return self.List
+    
+# Obj_list=Mylist([1,2,3,4,5,6,7,8])
+# print(Obj_list.Custom_append(9)) #[1,2,3,4,5,6,7,8,9]
+    
+# ------------------------------------------------------------------
+# 2.reverse
+
+# My_list=[1,2,3,4]
+# My_list.reverse()#[4,3,2,1]
+
+# custom method for reverse
+
+# class ReverseList:
+#     def __init__(self,List):
+#         self.List=List
+#     def Custom_reverse(self):
+#         return self.List[::-1]
+    
+# Obj_reverse=ReverseList([1,2,3,4])
+# print(Obj_reverse.Custom_reverse())
+
+# -------------------------------------------------------------------------
+# 3. remove 
+# My_list=[1,2,3,4]
+# My_list.remove(2)#[4,3,2,1]
+# print(My_list)
+
+# custom remove method 
+# class RemoveList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.EmptyList=None
+#         self.empty=[]
+#     def Custom_remove(self,ItemValue):
+#         for i in range(0,len(self.List)):
+#           if self.List[i]==ItemValue:
+#             self.EmptyList=i
+#             break
+          
+#         for i in range(0,len(self.List)):
+#           if i != self.EmptyList:
+#             self.empty=self.empty+[self.List[i]]
+#         self.List=self.empty
+#         return self.List
+           
+# Obj_remove=RemoveList([1,2,3,4])
+# print(Obj_remove.Custom_remove(1))
+
+# ------------------------------------------------------------------------------
+
+
+# 4.sort 
+# My_list=[4,2,3,1]
+# My_list.sort()#[1,3,2,4]
+# print(My_list)
+
+# custom sort method
+# class SortList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.sort=[]
+#     def Custom_sort(self):
+#         for i in range(0,len(self.List)):
+#             for value in range(0,(len(self.List))-i-1):
+#                 if self.List[value]>self.List[value+1]:
+#                     self.List[value],self.List[value+1]=self.List[value+1],self.List[value]
+#                     print(self.List)
+#         return(self.List)
+
+    
+# Obj_sort=SortList([5,2,3,4])
+# print(Obj_sort.Custom_sort())
+
+
+# --------------------------------------------------------------------------------------
+
+
+# 5. pop()
+
+# My_list=[4,2,3,1]
+# My_list.sort()#[1,3,2,4]
+# print(My_list)
+
+# custom pop() method
+
+# class PopList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.EmptyList=None
+#         self.empty=[]
+#     def Custom_pop(self,ItemValue=None):
+#         if ItemValue==None:
+#            return self.List[0:(len(self.List)-1)]
+#         for i in range(0,len(self.List)):
+#           if self.List[i]==ItemValue:
+#             self.EmptyList=i
+#             break
+          
+#         for i in range(0,len(self.List)):
+#           if i != self.EmptyList:
+#             self.empty=self.empty+[self.List[i]]
+#         self.List=self.empty
+#         return self.List
+           
+# Obj_pop=PopList([1,2,3,4])
+# print(Obj_remove.Custom_pop(1))
+
+#------------------------------------------------------------
+
+# 6.  custom method for clear
+
+# class ClearList:
+#     def __init__(self,List):
+#         self.List=List
+        
+#     def Custom_clear(self):
+#         self.List=[]
+#         return self.List
+        
+           
+# Obj_clear=ClearList([1,2,3,4])
+# print(Obj_clear.Custom_clear())
+#----------------------------------------------------------------------------
+
+
+# 7.copy
+
+
+# class CopyList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.copy=[]
+        
+#     def Custom_copy(self):
+#         self.copy=self.copy+self.List
+#         return self.copy
+        
+           
+# Obj_copy=CopyList([1,2,3,4])
+# print(Obj_copy.Custom_copy())
+
+#----------------------------------------------------------------------------------
+
+
+# 8. count custom method
+# class CountList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.count=0
+        
+        
+#     def Custom_count(self,itemvalue):
+#         for i in range(0,len(self.List)):
+#             if self.List[i]==itemvalue:
+#                 self.count=self.count+1
+        
+        
+#         return (self.count)
+        
+           
+# Obj=CountList([1,1,1,1,2,2,2,3,4,5])
+# print(Obj.Custom_count(1))#4
+
+#------------------------------------------------------------------------------
+
+# 9 . extend custom  method 
+
+
+# class ExtendList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.count=0
+        
+        
+#     def Custom_Extend(self,itemvalue):
+#         for i in range(0,len(itemvalue)):
+#             self.List=self.List+[itemvalue[i]]
+        
+        
+#         return self.List
+        
+           
+# Obj=ExtendList([1,2,3,4])
+# print(Obj.Custom_Extend([5,6,7,8]))#[1,2,3,4,5,6,7,8]
+
+#--------------------------------------------------------------------------
+
+# 10 index
+
+# class IndexList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.count=0
+        
+        
+#     def Custom_index(self,itemvalue):
+#         for i in range(0,len(self.List)):
+#             if self.List[i]==itemvalue:
+#                 self.count=i
+
+        
+        
+#         return self.count
+        
+           
+# Obj=IndexList([1,2,3,4])
+# print(Obj.Custom_index())#[1,2,3,4,5,6,7,8]
+
+#--------------------------------------------------------------
+# 11.insert
+
+# class InsertList:
+#     def __init__(self,List):
+#         self.List=List
+#         self.previous=0
+        
+        
+#     def Custom_insert(self,index,itemvalue):
+#         self.List[index:index]=[itemvalue]
+       
+        
+        
+#         return self.List
+        
+           
+# Obj=InsertList([1,2,3,4])
+# print(Obj.Custom_insert(2,10))#[1,2,3,4,5,6,7,8]
+
+
+#-----------------------------------------------------------------------
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+    
+ 

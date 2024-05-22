@@ -1,0 +1,182 @@
+print(dir(dict)) #clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'
+
+  1 clear
+class ClearDict:
+    def __init__(self,dict):
+        self.dict=dict
+    def Custom_Clear(self):
+        return dict({})
+Obj=ClearDict({"name":"prashanth","role":"developer","field":"it"})
+print(Obj.Custom_Clear())#{}
+-------------------------------------------------------------------------------
+
+2.copy
+class CopyDict:
+    def __init__(self,dictItems):
+        self.dictItems=dictItems
+        self.copy=dict({})
+    def Custom_Copy(self):
+        self.copy=self.dictItems
+        return self.dictItems
+Obj=CopyDict({"name":"prashanth","role":"developer","field":"it"})
+print(Obj.Custom_Copy())#{}
+-----------------------------------------------------------------------------------
+3 fromkeys method
+
+class fromkeysDict:
+    def __init__(self):
+        self.dictItems=dict({})
+    def Custom_from(self,Keys,values=None):
+        for i in Keys:
+            self.dictItems[i]=values[i-1]
+
+
+        return self.dictItems
+Obj=fromkeysDict()
+print(Obj.Custom_from([1,2,3,4]))
+
+------------------------------------------------------------------------------------------
+
+4. get
+
+class getDict:
+    def __init__(self,dictItems):
+        self.dictItems=dictItems
+    def Custom_get(self,Keys,values=None):
+        return self.dictItems[Keys] if Keys in self.dictItems else values
+Obj=getDict({"name":"prashanth","role":"developer","field":"it"})
+print(Obj.Custom_get("name1"))
+
+------------------------------------------------------------------------------------------
+
+ 5.  items
+
+class ItemsDict:
+    def __init__(self,dictItems):
+        self.dictItems=dictItems
+        self.Custom_keys=None
+        self.Custom_values=None
+    def Custom_items(self):
+        self.Custom_keys=self.dictItems.keys()
+        self.Custom_values=self.dictItems.values()
+        print(self.Custom_keys)
+        
+        return [(Keys, values) for Keys, values in zip(self.Custom_keys,self.Custom_values)]
+Obj=ItemsDict({"name":"prashanth","role":"developer","field":"it"})
+print(Obj.Custom_items())
+
+6. keys 
+
+class keysDict:
+    def __init__(self,dictItems):
+        self.dictItems=dictItems
+        self.keys=[]
+        
+    def Custom_keys(self):
+        for i in self.dictItems:
+            self.keys=self.keys+[i]
+
+        
+        return self.keys
+Obj=keysDict({"name":"prashanth","role":"developer","field":"it"})
+print(Obj.Custom_keys())
+
+
+-------------------------------------------------------------------------------
+
+7.pop
+
+class KeysDict:
+    def __init__(self, dictItems):
+        self.dictItems = dictItems
+        self.value=None
+    
+    def custom_pop(self, key, number=None):
+        
+        for k in self.dictItems.keys():
+            if k == key:
+                self.value = self.dictItems[k]
+                del self.dictItems[k]
+                break
+        return self.value if self.value !=None else number
+
+Obj = KeysDict({"name": "prashanth", "role": "developer", "field": "it"})
+print(Obj.custom_pop("role"))
+
+
+-----------------------------------------------------------------------------------------
+
+8. popitem
+
+class KeysDict:
+    def __init__(self, dictItems):
+        self.dictItems = dictItems
+        self.key = None
+        self.value = None
+    
+    def custom_popitem(self):
+        
+        
+        
+        for k, v in self.dictItems.items():
+            self.key = k
+            self.value = v
+            break
+        
+        del self.dictItems[self.key]
+        return (self.key, self.value)
+
+Obj = KeysDict({"name": "prashanth", "role": "developer", "field": "it"})
+print(Obj.custom_popitem())
+
+--------------------------------------------------------------------------------------
+
+9. setdefault( method)
+class KeysDict:
+    def __init__(self, dictItems):
+        self.dictItems = dictItems
+    
+    def custom_setdefault(self, key, default=None):
+        if key in self.dictItems:
+            return self.dictItems[key]
+        else:
+            self.dictItems[key] = default
+            return default
+
+Obj = KeysDict({"name": "prashanth", "role": "developer", "field": "it"})
+
+print(Obj.custom_setdefault("salary", 30000))
+
+----------------------------------------------------------------------------------
+ 
+10. update method
+
+
+class KeysDict:
+    def __init__(self, dictItems):
+        self.dictItems = dictItems
+    
+    def custom_update(self, NewItems):
+        for key, value in NewItems.items():
+            self.dictItems[key] = value
+        return self.dictItems
+
+Obj = KeysDict({"name": "prashanth", "role": "developer", "field": "it"})
+print(Obj.custom_update({"salary": 23000, "role": "backend"}))
+
+
+------------------------------------------------------------------------------
+11  values
+
+class KeysDict:
+    def __init__(self, dictItems):
+        self.dictItems = dictItems
+    
+    def custom_values(self):
+        values_list = []
+        for value in self.dictItems.values():
+            values_list.append(value)
+        return values_list
+
+Obj = KeysDict({"name": "prashanth", "role": "developer", "field": "it"})
+print(Obj.custom_values())
